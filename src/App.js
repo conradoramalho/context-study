@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import Button from './Button';
 import logo from './logo.svg';
 import './App.css';
 
-const { Provider, Consumer } = React.createContext();
+export const { Provider, Consumer } = React.createContext();
 
-class App extends Component {
+class App extends PureComponent {
   state = {
     theme: {
       color: 'dark',
@@ -32,26 +33,19 @@ class App extends Component {
             <h1 className="App-title">Welcome to React</h1>
           </header>
           <div className="App-intro">
+            <Button color="blue" />
+            <Button color="red" />
+            <Button color="green" />
             <Consumer>
-              {({ state, actions }) => {
-                console.log('actions: ', actions);
-                console.log('state: ', state);
+              {({ state }) => {
                 return (
                   <div
                     style={{
                       backgroundColor: state.theme.color,
                       height: 400,
+                      margin: 50,
                     }}
                   >
-                    <button onClick={() => actions.changeTheme('blue')}>
-                      change color
-                    </button>
-                    <button onClick={() => actions.changeTheme('red')}>
-                      change color
-                    </button>
-                    <button onClick={() => actions.changeTheme('green')}>
-                      change color
-                    </button>
                     Context API examples
                   </div>
                 );

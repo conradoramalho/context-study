@@ -34,4 +34,4 @@ Running project:
 
 ## Author
 
-> [Conrado Ramalho](https://github.com/conradoramalho)\
+> [Conrado Ramalho](https://github.com/conradoramalho)
